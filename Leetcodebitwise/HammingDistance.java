@@ -3,8 +3,10 @@ public class HammingDistance {
     public static void main(String [] args){
         // int x = 1;
         // int y = 4;
-        int x = 3;
-        int y = 1;
+        // int x = 3;
+        // int y = 1;
+        int x = 2;
+        int y = 6;
         Solution s = new Solution();
         int result = s.hammingdistance(x, y);
         System.out.println(result);
