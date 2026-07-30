@@ -3,7 +3,7 @@ public class SingleNumberII {
     public static void main(String [] args){
         int [] nums = {1,2,3,3,3,2,2};
         Solution sol = new Solution();
-        System.out.println(sol.issinglenumber(nums));;
+        System.out.println(sol.issinglenumber(nums));
     }
 }
 class Solution {
