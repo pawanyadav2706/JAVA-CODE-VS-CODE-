@@ -1,22 +1,25 @@
 import java.util.*;
-public class Subset {
+public class SubsetsII {
     public static void main(String [] args){
-        // int [] nums = {1, 2, 3};
-        int [] nums = {1,2,3};
+        int [] nums = {1,2,2};
         Solution sol = new Solution();
-        System.out.println(sol.subsets(nums));
+        System.out.println(sol.subsetsWithDup(nums));
     }
 }
 class Solution {
-    public List<List<Integer>> subsets(int [] nums){
+    public List<List<Integer>> subsetsWithDup(int [] nums){
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> current = new ArrayList<>();
+        Arrays.sort(nums);
         backtrack(0, nums, current, ans);
         return ans;
     }
     public void backtrack(int index, int[] nums,List<Integer> current, List<List<Integer>> ans){
         ans.add(new ArrayList<>(current));
         for(int i = index; i<nums.length; i++){
+            if(i > index && nums[i] == nums[i - 1]){
+                continue;
+            }
             current.add(nums[i]);
             backtrack(i + 1, nums, current, ans);
             current.remove(current.size() - 1);
