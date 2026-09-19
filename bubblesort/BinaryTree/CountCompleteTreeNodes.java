@@ -1,0 +1,54 @@
+public class CountCompleteTreeNodes {
+    public static void main(String [] args){
+        TreeNode root = new TreeNode(1);
+
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+
+        root.right.left = new TreeNode(6);
+
+        Solution sol = new Solution();
+        System.out.println(sol.countnodes(root));
+    }
+}
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int val){
+        this.val = val;
+    }
+}
+class Solution {
+    public int countnodes(TreeNode root){
+        if(root == null){
+            return 0;
+        }
+        int left = leftheight(root);
+        int right = rightheight(root);
+
+        if(left == right){
+            return (1 << left) - 1;
+        }
+        return countnodes(root.left) + countnodes(root.right) + 1;
+    }
+    public int leftheight(TreeNode root){
+        int height = 0;
+        while (root != null) {
+            height++;
+            root = root.left;
+        }
+        return height;
+    }
+    public int rightheight(TreeNode root){
+        int height = 0;
+        while (root != null) {
+            height++;
+            root = root.right;
+        }
+        return height;
+    }
+}
