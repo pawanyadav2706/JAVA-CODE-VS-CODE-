@@ -1,7 +1,9 @@
 public class DistinctSubsequences {
     public static void main(String [] args){
-        String s = "rabbbit";
-        String t = "rabbit";
+        // String s = "rabbbit";
+        // String t = "rabbit";
+        String s = "babgbag";
+        String t = "bag";
 
         Solution sol = new Solution();
         int result = sol.numDistinct(s, t);
