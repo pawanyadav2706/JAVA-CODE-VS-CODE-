@@ -1,7 +1,7 @@
 import java.util.*;
 public class Vowelnoalphabet {
     public static void main(String [] args){
-        String str = "apple";
+        String str = "Apple";
 
         Solution sol = new Solution();
         System.out.println(sol.alphabet(str));
@@ -12,8 +12,8 @@ class Solution {
          String ans = "";
         for(int i =0;i< str.length(); i++){
             char ch = str.charAt(i);
-            if(ch == 'a'){
-                ans = ans + 'b';
+            if(ch == 'A'){
+                ans = ans + 'B';
             }else{
                 ans = ans + ch;
             }
